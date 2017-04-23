@@ -1,0 +1,14 @@
+{
+  "directory": "home",
+  "version": "1.0.0",
+  "entries": {
+    "index": {
+      "template": "home/index/tpl/index.pug",
+      "filename": "home/index.html",
+      "entry": "home/index/js/index.js",
+      "inject": false,
+      "hash": true,
+      "chunks": ["js/home/index"]
+    }
+  }
+}

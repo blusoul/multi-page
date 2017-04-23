@@ -1,0 +1,22 @@
+{
+  "directory": "member",
+  "version": "1.0.0",
+  "entries": {
+    "index": {
+      "template": "member/index/tpl/index.pug",
+      "filename": "member/index.html",
+      "entry": "member/index/js/index.js",
+      "inject": "body",
+      "hash": true,
+      "chunks": ["js/member/index"]
+    },
+    "order": {
+      "template": "member/order/tpl/index.pug",
+      "filename": "member/order.html",
+      "entry": "member/order/js/index.js",
+      "inject": "body",
+      "hash": true,
+      "chunks": ["js/member/order"]
+    }
+  }
+}
