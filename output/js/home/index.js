@@ -329,7 +329,7 @@ function pug_rethrow(err, filename, lineno, str){
     throw err;
   }
   try {
-    str = str || __webpack_require__(5).readFileSync(filename, 'utf8')
+    str = str || __webpack_require__(4).readFileSync(filename, 'utf8')
   } catch (ex) {
     pug_rethrow(err, null, lineno)
   }
@@ -371,8 +371,7 @@ document.getElementById('banner').innerHTML = bannerHtml;
 
 /***/ }),
 /* 3 */,
-/* 4 */,
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /* (ignored) */

@@ -1,11 +1,11 @@
-let glob = require('glob');
-let _ = require('lodash');
-let path = require('path');
-let fs = require('fs');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const glob = require('glob');
+const _ = require('lodash');
+const path = require('path');
+const fs = require('fs');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entryDir = './src/view/';
-let finalDir = null;
+let finalDir = {};
 const entries = {};
 const plugins = [];
 
@@ -15,7 +15,6 @@ function partialDeal() {
 
   if (!configDir) return false;
   const dirList = configDir.split('_');
-  let finalDir = {};
 
   dirList.map(function (item) {
     let [dirName, fileName] = item.split('-');
@@ -34,6 +33,7 @@ function partialDeal() {
 // 读取打包 module.json 路径
 function readModule() {
   const pathList = glob.sync('./src/view/**/module.json');
+
   pathList.map(item => {
     const data = JSON.parse(fs.readFileSync(item, 'utf8'));
 
@@ -72,7 +72,9 @@ function combineOption(item, data) {
 }
 
 finalDir = partialDeal();
+
 readModule();
+
 module.exports = {
   entries,
   plugins
