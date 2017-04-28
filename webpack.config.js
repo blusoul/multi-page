@@ -10,13 +10,27 @@ module.exports = {
   entry: entries,
   output: {
     path: __dirname + '/output/',
-    filename: '[name].js'
+    filename: '[name]-[chunkhash:5].js'
   },
   module: {
-    loaders: [{
-      test: /\.pug$/,
-      loader: 'pug-loader'
-    }, ]
+    rules: [{
+        test: /\.pug$/,
+        use: [{
+          loader: 'pug-loader',
+          options: {
+            pretty: true
+          }
+        }]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'stylus-loader'
+        ]
+      }
+    ]
   },
   watch: true,
   plugins: plugins

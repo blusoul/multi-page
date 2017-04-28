@@ -7,7 +7,7 @@
       "filename": "home/index.html",
       "entry": "home/index/js/index.js",
       "inject": false,
-      "hash": true,
+      "hash": false,
       "chunks": ["js/home/index"]
     }
   }

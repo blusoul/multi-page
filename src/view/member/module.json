@@ -7,7 +7,7 @@
       "filename": "member/index.html",
       "entry": "member/index/js/index.js",
       "inject": "body",
-      "hash": true,
+      "hash": false,
       "chunks": ["js/member/index"]
     },
     "order": {
@@ -15,7 +15,7 @@
       "filename": "member/order.html",
       "entry": "member/order/js/index.js",
       "inject": "body",
-      "hash": true,
+      "hash": false,
       "chunks": ["js/member/order"]
     }
   }

@@ -11,7 +11,7 @@ const plugins = [];
 
 function partialDeal() {
   // home-index_member-index
-  const configDir = process.env.npm_config_dir || process.env.npm_package_config_dir || '';
+  const configDir = process.env.npm_config_dir;
 
   if (!configDir) return false;
   const dirList = configDir.split('_');
