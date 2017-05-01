@@ -7,10 +7,14 @@ html(lang='zh-cmn-Hans')
     meta(name='apple-mobile-web-app-capable' content='yes')
     meta(name='apple-mobile-web-app-status-bar-style' conent='black')
     meta(name='format-detection' content='telephone=no')
+    block style
+      -var styles = htmlWebpackPlugin.files.css
+      each val in styles
+        link(rel='stylesheet' href=val)
   body
     block main
-
+    
     block bottomScript
-      - var values = htmlWebpackPlugin.files.chunks;
+      - var values = htmlWebpackPlugin.files.js;
       each val in values
-        script(src=val.entry)
+        script(src=val)

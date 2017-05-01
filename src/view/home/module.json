@@ -8,7 +8,7 @@
       "entry": "home/index/js/index.js",
       "inject": false,
       "hash": false,
-      "chunks": ["js/home/index"]
+      "chunks": ["js/common/index", "js/home/index"]
     }
   }
 }

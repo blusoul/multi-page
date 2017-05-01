@@ -1,8 +1,10 @@
 const glob = require('glob');
 const _ = require('lodash');
 const path = require('path');
+const webpack = require('webpack');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const entryDir = './src/view/';
 let finalDir = {};
