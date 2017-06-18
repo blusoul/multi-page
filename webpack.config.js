@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const manifest = require('./bundle-manifest.json');
 let {
   entries,
   plugins
@@ -12,6 +13,10 @@ plugins.push(new ExtractTextPlugin({
     filename: (getPath) => {
       return getPath('css/[name]-[contenthash:6].css').replace('css/js', 'css');
     }
+  }),
+  new webpack.DllReferencePlugin({
+    context: __dirname,
+    manifest: manifest
   }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NamedModulesPlugin()
@@ -27,6 +32,10 @@ module.exports = {
   },
   module: {
     rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }, {
         test: /\.pug$/,
         use: [{
           loader: 'pug-loader',
@@ -53,6 +62,8 @@ module.exports = {
     contentBase: path.join(__dirname, 'output'),
     compress: true,
     hot: true,
+    host: '0.0.0.0',
+    inline: true,
     port: 9000
   }
 };

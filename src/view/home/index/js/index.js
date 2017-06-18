@@ -1,4 +1,4 @@
-require('../styl/index.styl');
+// require('../styl/index.styl');
 require('../styl/a.css');
 var template = require('../tpl/banner.pug');
 

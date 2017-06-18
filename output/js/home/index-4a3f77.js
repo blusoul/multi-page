@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c483ff41236f4f7b98a1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4a3f77785b70767b6242"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -974,7 +974,10 @@ function pug_rethrow(err, filename, lineno, str){
 /***/ "./src/view/home/index/js/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__("./src/view/home/index/styl/index.styl");
+"use strict";
+
+
+// require('../styl/index.styl');
 __webpack_require__("./src/view/home/index/styl/a.css");
 var template = __webpack_require__("./src/view/home/index/tpl/banner.pug");
 
@@ -990,13 +993,6 @@ document.getElementById('banner').innerHTML = bannerHtml;
 /***/ }),
 
 /***/ "./src/view/home/index/styl/a.css":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/view/home/index/styl/index.styl":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -4,13 +4,21 @@
   "description": "webpack & pug & stylus multipage build",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --color",
-    "server": "webpack-dev-server --progress --color"
+    "build": "npm run dll:prd && webpack --progress --color --profile",
+    "dll:dev": "webpack --config webpack.dll.common.js --progress --color --profile",
+    "dll:prd": "webpack --config webpack.dll.prd.js --env.production  --progress --color --profile",
+    "start": "npm run dll:dev && webpack-dev-server --progress --color"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "assets-webpack-plugin": "^3.5.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "glob": "^7.1.1",
@@ -23,9 +31,15 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "lodash": "^4.17.4"
+    "babel-polyfill": "^6.23.0",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

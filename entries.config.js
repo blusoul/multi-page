@@ -4,7 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const bundleConfig = require("./bundle-config.json");
 
 const entryDir = './src/view/';
 let finalDir = {};
@@ -65,7 +65,15 @@ function combineOption(item, data) {
   if (options) {
     options.template = entryDir + options.template;
     options.filename = 'html/' + options.filename;
-    let temp = {};
+    options.chunksSortMode = function (chunk1, chunk2) {
+      const orders = options.chunks;
+      const order1 = orders.indexOf(chunk1.names[0]);
+      const order2 = orders.indexOf(chunk2.names[0]);
+      return order1 - order2;
+    };
+
+    // options.vendor = bundleConfig.vendor.js;
+
     entries['js/' + data.directory + '/' + item] = entryDir + options.entry;
     delete options.entry;
 
