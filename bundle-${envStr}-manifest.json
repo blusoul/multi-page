@@ -1,9 +1,0 @@
-{
-  "name": "vendor_7cc269c",
-  "content": {
-    "./node_modules/whatwg-fetch/fetch.js": {
-      "id": 0,
-      "meta": {}
-    }
-  }
-}
